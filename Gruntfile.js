@@ -4,7 +4,10 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          paths: ["src/less"]
+          paths: ["src/less"],
+          plugins: [
+            new (require('less-plugin-autoprefix'))({browsers : [ "last 2 versions" ]})
+          ]
         },
         files: {
           "public/main.css": "src/less/main.less"
