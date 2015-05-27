@@ -4,7 +4,8 @@
   "description": "Efrat Talbi\\'s final project",
   "main": "index.html",
   "dependencies": {
-    "bower": "^1.4.1"
+    "bower": "^1.4.1",
+    "grunt": "^0.4.5"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
