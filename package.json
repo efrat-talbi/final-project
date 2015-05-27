@@ -1,0 +1,27 @@
+{
+  "name": "final-project",
+  "version": "0.0.0",
+  "description": "Efrat Talbi\\'s final project",
+  "main": "index.html",
+  "dependencies": {
+    "bower": "^1.4.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.0",
+    "grunt-contrib-less": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efrat-talbi/final-project.git"
+  },
+  "author": "Efrat Talbi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/efrat-talbi/final-project/issues"
+  },
+  "homepage": "https://github.com/efrat-talbi/final-project#readme"
+}

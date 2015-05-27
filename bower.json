@@ -1,0 +1,21 @@
+{
+  "name": "History of Hysteria",
+  "version": "0.0.0",
+  "homepage": "https://github.com/efrat-talbi/final-project",
+  "authors": [
+    "Efrat Talbi"
+  ],
+  "description": "Efrat Talbi's final project",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fullpage.js": "~2.6.5"
+  }
+}
