@@ -10,11 +10,17 @@ module.exports = function(grunt) {
           "public/main.css": "src/less/main.less"
         }
       }
+    },
+    
+    watch: {
+      files: "src/less/*.less",
+      tasks: ["less"]
     }
   });
   
   
   // Load grunt plugins.
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-watch');
  
 };
