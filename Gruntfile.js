@@ -16,12 +16,25 @@ module.exports = function(grunt) {
       }
     },
     
+    /*
     express: {
       all: {
         options: {
           bases: ['.', '/public'],
           livereload: true,
           open: 'http://localhost:3000'
+        }
+      }
+    },
+    */
+    browserSync: {
+      bsFiles: {
+        src : ['index.html', 'public/main.css', 'public/main.js']
+      },
+      options: {
+        watchTask: true,
+        server: {
+          baseDir: "."
         }
       }
     },
@@ -35,9 +48,10 @@ module.exports = function(grunt) {
   
   // Load grunt plugins.
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-express');
+  // grunt.loadNpmTasks('grunt-express');
+  grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-watch');
  
   grunt.registerTask('default', ['less', 'watch']);
-  grunt.registerTask('start', ['express', 'watch']);
+  grunt.registerTask('start', ['browserSync', 'watch']);
 };
