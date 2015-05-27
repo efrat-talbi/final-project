@@ -16,6 +16,16 @@ module.exports = function(grunt) {
       }
     },
     
+    express: {
+      all: {
+        options: {
+          bases: ['.', '/public'],
+          livereload: true,
+          open: 'http://localhost:3000'
+        }
+      }
+    },
+    
     watch: {
       files: "src/less/*.less",
       tasks: ["less"]
@@ -25,7 +35,9 @@ module.exports = function(grunt) {
   
   // Load grunt plugins.
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-watch');
  
   grunt.registerTask('default', ['less', 'watch']);
+  grunt.registerTask('start', ['express', 'watch']);
 };
