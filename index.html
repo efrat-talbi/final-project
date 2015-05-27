@@ -1,39 +1,58 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>היסטוריה של היסטריה</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>היסטוריה של היסטריה</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+      <link rel="apple-touch-icon" href="apple-touch-icon.png">
+      <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="public/main.css">
-        <script src="public/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+      <link rel="stylesheet" href="public/main.css">
+      <script src="public/vendor/modernizr-2.8.3.min.js"></script>
+      <script src="public/vendor/jquery/dist/jquery.min.js"></script>
+      <script src="public/vendor/plugins.js"></script>
+      <script src="public/vendor/fullpage.js/jquery.fullPage.min.js"></script>
+      <script src="public/main.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+    <div id="fullpage">
+      <div class="section">
+        <div class="slide" id="start">התחלה</div>
+        <div class="slide" id="ancient-greece">יוון העתיקה</div>
+        <div class="slide" id="dark-ages">ימי הביניים</div>
+        <div class="slide" id="enlightment">עידן הנאורות</div>
+        <div class="slide" id="victorian">התקופה הויקטוריאנית</div>
+        <div class="slide" id="modern-times">העידן המודרני</div>
+        <div class="slide" id="end">סוף</div>
+      </div>
+    </div>
+    <ul id="menu">
+      <li data-menuanchor="start" class="active"><a href="#start">התחלה</a></li>
+      <li data-menuanchor="ancient-greece"><a href="#ancient-greece">יוון העתיקה</a></li>
+      <li data-menuanchor="dark-ages"><a href="#dark-ages">ימי הביניים</a></li>
+      <li data-menuanchor="enlightment"><a href="#enlightment">עידן הנאורות</a></li>
+      <li data-menuanchor="victorian"><a href="#victorian">התקופה הויקטוריאנית</a></li>
+      <li data-menuanchor="modern-times"><a href="#modern-times">העידן המודרני</a></li>
+      <li data-menuanchor="end"><a href="#end">סוף</a></li>
+  </ul>
+    
+    
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="public/vendor/jquery/dist/jquery.min.js"><\/script>')</script>
-        <script src="public/vendor/plugins.js"></script>
-        <script src="public/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    </body>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script>
+  </body>
 </html>
