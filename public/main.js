@@ -66,8 +66,15 @@ $(document).ready(function() {
   $('.owl-carousel').owlCarousel({
     rtl: true,
     items: 1,
+    nav: true,
+    URLhashListener: true,
     center: true,
-    startPosition: 3
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    video: true,
+    margin: 100
   });
   
 });

@@ -15,7 +15,7 @@
       <script src="public/vendor/jquery/dist/jquery.min.js"></script>
       <script src="public/vendor/plugins.js"></script>
       <script src="public/vendor/handlebars/handlebars.min.js"></script>
-      <!-- <script src="public/vendor/owl-carousel2/dist/owl.carousel.min.js"></script> -->
+      <script src="public/vendor/owl-carousel2/dist/owl.carousel.min.js"></script>
       <script src="public/main.js"></script>
   </head>
   <body>
@@ -23,7 +23,7 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="content-container"></div>
+    <div id="content-container" class="owl-carousel"></div>
     
     <!-- 
     <ul id="menu">
@@ -39,9 +39,10 @@
     
     <script id="chapter-template" type="text/x-handlebars-template">
       {{#chapters}}
-      <section class="chapter" id="...">
+      <section class="chapter" id="{{id}}" data-hash="{{id}}">
         <div class="video"></div>
         <h1>
+          <span class="chapter-number">פרק {{chapterNumber @index}}</span>
           {{title}}
           <small>{{period}}</small>
         </h1>
