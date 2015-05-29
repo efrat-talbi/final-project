@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "fullpage.js": "~2.6.5"
+    "owl-carousel2": "*"
   }
 }

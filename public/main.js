@@ -1,7 +1,7 @@
 $(document).ready(function() {
   
-    $('#fullpage').fullpage({
-      menu: '#menu'
+    $('.owl-carousel').owlCarousel({
+      rtl: true
     });
   
 });
