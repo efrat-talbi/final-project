@@ -48,6 +48,11 @@ $(document).ready(function() {
         HANDLEBARS
   *********************/
   
+  // Takes an item’s array index and offsets it by 1
+  Handlebars.registerHelper("chapterNumber", function(index) {
+    return index + 1;
+  });
+  
   var source   = $("#chapter-template").html();
   var template = Handlebars.compile(source);
   
