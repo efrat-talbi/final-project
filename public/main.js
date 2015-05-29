@@ -58,10 +58,11 @@ $(document).ready(function() {
         SLIDER
   ******************/
   
-  /*
   $('.owl-carousel').owlCarousel({
-    rtl: true
+    rtl: true,
+    items: 1,
+    center: true,
+    startPosition: 3
   });
-  */
   
 });
