@@ -14,7 +14,8 @@
       <script src="public/vendor/modernizr-2.8.3.min.js"></script>
       <script src="public/vendor/jquery/dist/jquery.min.js"></script>
       <script src="public/vendor/plugins.js"></script>
-      <script src="public/vendor/owl-carousel2/dist/owl.carousel.min.js"></script>
+      <script src="public/vendor/handlebars/handlebars.min.js"></script>
+      <!-- <script src="public/vendor/owl-carousel2/dist/owl.carousel.min.js"></script> -->
       <script src="public/main.js"></script>
   </head>
   <body>
@@ -22,15 +23,8 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="owl-carousel">
-      <section id="start">התחלה</section>
-      <section id="ancient-greece">יוון העתיקה</section>
-      <section id="dark-ages">ימי הביניים</section>
-      <section id="enlightment">עידן הנאורות</section>
-      <section id="victorian">התקופה הויקטוריאנית</section>
-      <section id="modern-times">העידן המודרני</section>
-      <section id="end">סוף</section>
-    </div>
+    <div id="content-container"></div>
+    
     <!-- 
     <ul id="menu">
       <li data-menuanchor="start" class="active"><a href="#start">התחלה</a></li>
@@ -41,20 +35,19 @@
       <li data-menuanchor="modern-times"><a href="#modern-times">העידן המודרני</a></li>
       <li data-menuanchor="end"><a href="#end">סוף</a></li>
     </ul>
-
     -->
     
     <script id="chapter-template" type="text/x-handlebars-template">
+      {{#chapters}}
       <section class="chapter" id="...">
-        <div class="wrapper">
-          <div class="video"></div>
-          <h1>
-            {{ title }}
-            <small>{{ period }}</small>
-          </h1>
-          <p>{{ desc }}</p>
-        </div>
+        <div class="video"></div>
+        <h1>
+          {{title}}
+          <small>{{period}}</small>
+        </h1>
+        <p>{{desc}}</p>
       </section>
+      {{/chapters}}
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
