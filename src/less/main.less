@@ -1,4 +1,69 @@
 @import "/public/vendor/normalize.css";
 @import "/public/vendor/h5bp.css";
 @import "/public/vendor/owl-carousel2/dist/assets/owl.carousel.min.css";
-@import "/public/vendor/owl-carousel2/dist/assets/owl.theme.default.min.css";
+
+@video-width: 1024px;
+
+html,
+body,
+#content-container {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  direction: rtl;
+  background-color: #eee;
+}
+
+#content-container {
+  margin: 0 auto;
+  top: 0;
+  right: 0;
+  width: @video-width;
+}
+
+.owl-carousel {
+  .owl-item {
+    width: @video-width;
+    float: right;
+  }
+}
+
+.chapter {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  .video {
+    width: @video-width;
+    height: @video-width * 10/16;
+    background-color: #666;
+    border: 1px solid #333;
+  }
+
+  h1 {
+    width: @video-width * 4/10;
+    float: right;
+    font-size: 4em;
+    
+    .chapter-number {
+      font-size: 0.25em;
+      color: #999;
+      display: block;
+    }
+
+    small {
+      font-size: 0.5em;
+      display: block;
+    }
+  }
+
+  p {
+    width: @video-width * 6/10;
+    float: left;
+  }
+}
+
+
