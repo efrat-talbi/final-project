@@ -44,7 +44,18 @@
 
     -->
     
-    
+    <script id="chapter-template" type="text/x-handlebars-template">
+      <section class="chapter" id="...">
+        <div class="wrapper">
+          <div class="video"></div>
+          <h1>
+            {{ title }}
+            <small>{{ period }}</small>
+          </h1>
+          <p>{{ desc }}</p>
+        </div>
+      </section>
+    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
