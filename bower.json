@@ -17,5 +17,8 @@
   ],
   "dependencies": {
     "owl-carousel2": "*"
+  },
+  "devDependencies": {
+    "handlebars": "~3.0.3"
   }
 }
