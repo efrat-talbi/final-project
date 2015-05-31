@@ -77,8 +77,21 @@ $(document).ready(function() {
     overview: false
   });
   
+  function menuHighlight() {
+    // Remove existing highlight
+    $('#menu li.present').removeClass('present');
+    // Find present slide
+    var presentSlideId = $('section.present').attr('id');
+    var respectiveMenuItem = $('a[href="#/' + presentSlideId + '"]');
+    $(respectiveMenuItem).parent().addClass('present');
+  }
+  
+  Reveal.addEventListener( 'ready', function(event) {
+    menuHighlight();
+  });
+  
   Reveal.addEventListener( 'slidechanged', function(event) {
-    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    menuHighlight();
   });
   
   /*
