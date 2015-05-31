@@ -49,32 +49,61 @@ $(document).ready(function() {
   *********************/
   
   // Takes an item’s array index and offsets it by 1
-  Handlebars.registerHelper("chapterNumber", function(index) {
+  Handlebars.registerHelper('chapterNumber', function(index) {
     return index + 1;
   });
   
-  var source   = $("#chapter-template").html();
-  var template = Handlebars.compile(source);
+  var chaptersSource   = $('#chapter-template').html();
+  var menuSource   = $('#menu-template').html();
   
-  $("#content-container").html(template(content));
+  var chaptersTemplate = Handlebars.compile(chaptersSource);
+  var menuTemplate = Handlebars.compile(menuSource);
+  
+  $('.slides').html(chaptersTemplate(content));
+  $('#menu').html(menuTemplate(content));
   
     
   /******************
         SLIDER
   ******************/
   
+  Reveal.initialize({
+    rtl: true,
+    controls: false,
+    touch: false,
+    keyboard: true,
+    transition: 'slide',
+    center: false,
+    overview: false
+  });
+  
+  Reveal.addEventListener( 'slidechanged', function(event) {
+    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+  });
+  
+  /*
   $('.owl-carousel').owlCarousel({
     rtl: true,
     items: 1,
     nav: true,
     URLhashListener: true,
-    center: true,
+    startPosition: 'URLHash',
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     dots: false,
-    video: true,
-    margin: 100
+    onInitialize: menuHighlight,
+    onChanged: menuHighlight,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn'
   });
+    
+  function menuHighlight(event) {
+    $('.menu-item.active').removeClass('active');
+    var activeSlideId = $('.owl-item.active section').attr('id');
+    var respectiveMenuItem = '.menu-item a[href=#' + activeSlideId + ']';
+    $('.menu-item a[href=#' + activeSlideId + ']').parent().addClass('active');
+  }
+  */
   
 });
