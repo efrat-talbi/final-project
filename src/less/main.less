@@ -9,7 +9,7 @@
 body {
   direction: rtl;
   background-color: #eee;
-  font-family: "almoni-dl", arial;
+  font-family: "almoni-dl", arial !important; 
 }
 
 /*
@@ -63,19 +63,22 @@ body {
 #menu {
   width: 100%;
   position: fixed;
-  bottom: 0px;
+  bottom: -150px;
   right: 0;
   z-index: 10000;
   padding: 0;
   margin: 0;
   display: flex;
+  
+  &:hover {
+    bottom: 0;
+  }
 }
 
 .menu-item {
   width: 18%;
   display: inline-block;
-  background-color: #555;
-  text-align: center;
+  padding-top: 40px;
   
   /*
   
@@ -94,16 +97,21 @@ body {
   
   */
   
-  a {
-    display: block;
-    height: 100%;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    text-decoration: none;
+  &.present {
+    
+    a {
+      background-color: #999;
+    }
   }
   
-  &.present {
-    background-color: #999;
+  a {
+    display: block;
+    height: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #555;
+    text-align: center;
+    text-decoration: none;
   }
   
   .thumbnail {
