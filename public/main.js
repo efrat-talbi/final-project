@@ -73,7 +73,7 @@ $(document).ready(function() {
     touch: false,
     keyboard: true,
     transition: 'slide',
-    center: false,
+    center: true,
     overview: false
   });
   
