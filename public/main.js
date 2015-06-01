@@ -77,6 +77,10 @@ $(document).ready(function() {
     overview: false
   });
   
+  /**************
+        MENU
+  **************/
+  
   function menuHighlight() {
     // Remove existing highlight
     $('#menu li.present').removeClass('present');
@@ -119,4 +123,22 @@ $(document).ready(function() {
   }
   */
   
+  /*****************************
+      HACKY VIDEO INTERACTION
+  *****************************/
+  
+  var playButton = '<button class="action play"><i class="fa fa-play fa-flip-horizontal"></i> נגן סרטון</button>'
+  var videoStub = '<i class="action fa fa-circle-o-notch fa-spin"></i>';
+  var nextButton = '<button class="action next">לסרטון הבא <i class="fa fa-arrow-right fa-flip-horizontal"></i></button>'
+  
+  $('.video')
+    .on('click', '.action.play', function() {
+      $(this).replaceWith(videoStub);
+      $('i.fa-spin').wait(2500).replaceWith(nextButton);
+    });
+  $('.video')
+    .on('click', '.action.next', function() {
+      Reveal.next();
+      $(this).replaceWith(playButton);
+    });
 });

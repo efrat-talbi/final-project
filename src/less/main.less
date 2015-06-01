@@ -27,10 +27,22 @@ body {
   text-align: right;
   
   .video {
+    display: flex;
     width: @video-width;
     height: @video-width * 10/16;
     background-color: #666;
     border: 1px solid #333;
+    align-items: center;
+    justify-content: space-around;
+    
+    .action {
+      padding: 10px 15px;
+      
+      &.fa-spin {
+        font-size: 3em;
+        color: #ccc;
+      }
+    }
   }
   
   h1,
@@ -144,5 +156,3 @@ body {
     float: right;
   }
 }
-
-
