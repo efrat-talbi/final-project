@@ -1,12 +1,15 @@
 @import (less) "./public/components/normalize.css";
 @import (less) "./public/components/h5bp.css";
 @import (less) "./public/components/reveal.js/css/reveal.css";
+@import (less) "fonts.less";
 
 @video-width: 960px;
+@font-path: "./fonts";
 
 body {
   direction: rtl;
   background-color: #eee;
+  font-family: "almoni-dl", arial;
 }
 
 /*
@@ -69,19 +72,38 @@ body {
 }
 
 .menu-item {
-  width: 20%;
+  width: 18%;
   display: inline-block;
   background-color: #555;
   text-align: center;
   
+  /*
+  
+  &:first-child,
+  &:last-child {
+    width: 5%;
+  }
+  
+  &:first-child {
+    transform: rotate(90deg);
+  }
+  
+  &:last-child {
+    transform: rotate(-90deg);
+  }
+  
+  */
+  
   a {
+    display: block;
+    height: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
     text-decoration: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
   }
   
   &.present {
-    background-color: #aaa;
+    background-color: #999;
   }
   
   .thumbnail {
@@ -98,13 +120,14 @@ body {
 
     .chapter-number {
       font-size: 0.5em;
-      color: #ddd;
+      color: #bbb;
       display: block;
     }
 
     small {
-      font-size: 0.75em;
       display: block;
+      font-size: 0.5em;
+      font-weight: 400;
     }
   }
 
@@ -112,7 +135,6 @@ body {
     width: @video-width * 6/10;
     float: right;
   }
-  
 }
 
 
