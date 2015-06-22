@@ -18,7 +18,8 @@
   "dependencies": {
     "reveal.js": "~3.1.0",
     "jquery": "~2.1.4",
-    "jquery.wait": "~1.1.0"
+    "jquery.wait": "~1.1.0",
+    "video.js": "~4.12.9"
   },
   "devDependencies": {
     "handlebars": "~3.0.3"
