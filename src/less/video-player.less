@@ -1,0 +1,63 @@
+#video-player  {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  
+  .modal-dialog,
+  .modal-content,
+  video {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0;
+  }
+  
+  .modal-content {
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+  }
+  
+  .close {
+    position: absolute;
+    right: @modal-inner-padding;
+    top: @modal-inner-padding;
+    color: white;
+    .opacity(1.0);
+    text-shadow: none;
+
+    &:hover,
+    &:focus {
+      color: white;
+      .opacity(1.0);
+    }
+    
+    &:before {
+      .icn('f00d');
+      color: white;
+    }
+  }
+}
+
+/*
+.video-js .vjs-tech {
+  width: 100% !important;
+  height: 100% !important;
+}
+*/
+
+.vjs-fullscreen {
+  padding-top: 0px;
+}
+
+.vjs-default-skin {
+  
+  .vjs-slider-handle,
+  .vjs-control,
+  .vjs-big-play-button,
+  .vjs-loading-spinner {
+    
+    &:before {
+      font-family: "FontAwesome";
+    }
+  }
+}
