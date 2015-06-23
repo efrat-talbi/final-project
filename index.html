@@ -12,13 +12,14 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="public/main.css">
+    <script src="public/components/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
     <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="content-container" class="reveal">
+    <div class="reveal">
       <div class="slides">
         <!-- handlebarsJS chapter-template -->
       </div>
@@ -28,18 +29,36 @@
       <!-- handlebarsJS menu-template -->
     </ol>
     
+    <div class="modal fade" id="video-player" tabindex="-1" role="dialog" aria-labelledby="video player">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <video class="video-js vjs-default-skin vjs-big-play-centered" id="chapter-video" controls preload="none" src="/public/videos/ancient-greece.mp4">
+            </video>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+    
     <script id="chapter-template" type="text/x-handlebars-template">
       {{#chapters}}
       <section class="chapter" id="{{id}}">
-        <div class="video">
-          <button class="action play"><i class="fa fa-play fa-flip-horizontal"></i> נגן סרטון</button>
-        </div>
-        <h1>
-          <span class="chapter-number">פרק {{chapterNumber @index}}</span>
-          {{title}}
-          <small>{{period}}</small>
-        </h1>
-        <p>{{desc}}</p>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 actions">
+              <button type="button" class="btn btn-primary btn-lg center-block" class="open-video-btn" data-toggle="modal" data-target="#video-player">נגן סרטון</button>
+            </div>
+          </div> <!-- .row -->
+          <div class="row">
+            <div class="col-xs-12 chapter-info">
+              <h1 class="chapter-title">
+                <span class="chapter-number">פרק {{chapterNumber @index}}</span>
+                {{title}}
+                <small class="chapter-period">{{period}}</small>
+              </h1>
+              <p class="chapter-desc">{{desc}}</p>
+            </div>
+          </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
       </section>
       {{/chapters}}
     </script>
@@ -47,7 +66,7 @@
     <script id="menu-template" type="text/x-handlebars-template">
       <li class="menu-item" id="start">
         <a href="/">
-          <h2>
+          <h2 class="chapter-title">
             התחלה
           </h2>
         </a>
@@ -56,28 +75,29 @@
       <li class="menu-item">
         <a href="#/{{id}}">
           <!-- <div class="thumbnail"></div> -->
-          <h2>
+          <h2 class="chapter-title">
             <span class="chapter-number">פרק {{chapterNumber @index}}</span>
             {{title}}
-            <small>{{period}}</small>
+            <small class="chapter-period">{{period}}</small>
           </h2>
         </a>
       </li>
       {{/chapters}}
       <li class="menu-item" id="end">
         <a>
-          <h2>
+          <h2 class="chapter-title">
             סוף
           </h2>
         </a>
       </li>
     </script>
     
-    <script src="public/components/modernizr-2.8.3.min.js"></script>
     <script src="public/components/jquery/dist/jquery.min.js"></script>
     <script src="public/components/plugins.js"></script>
     <script src="public/components/handlebars/handlebars.min.js"></script>
     <script src="public/components/reveal.js/js/reveal.js"></script>
+    <script src="public/components/video.js/dist/video-js/video.js"></script>
+    <script src="public/components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="public/components/jquery.wait/jquery.wait.js"></script>
     <script src="public/main.js"></script>
 

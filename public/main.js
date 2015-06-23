@@ -11,38 +11,35 @@ $(document).ready(function() {
         title: "הרחם המשוטט",
         period: "יוון העתיקה",
         desc: "יוון העתיקה היא תקופה בהיסטוריה של יוון שנמשכה למעלה מאלף שנים במהלך העת העתיקה עד לעליית הנצרות ביוון. התרבות היוונית העתיקה ומורשתה נחשבת בעיני היסטוריונים רבים כערש התרבות המערבית אשר הייתה בעלת השפעה רבה על תרבות האימפריה הרומית ועל כלל התרבויות האירופאיות עד לימינו. ",
-        clipUrl: "..."
       },
       {
         id: "dark-ages",
         title: "דיבוק",
         period: "ימי הביניים",
         desc: "יְמֵי הַבֵּינַיִם (בלטינית: Medium Aevum) הם תקופה במהלך ההיסטוריה האירופית שתחילתה עם סיום העת העתיקה וסופה עם הופעת הרנסאנס ותחילתה של העת החדשה. המונח הופיע לראשונה באיטליה במהלך המאה ה-15, לציון העידן שבין נפילתה של הקיסרות הרומית בשנת 476 במאה החמישית, עד 1492 שנת גילוי יבשת אמריקה במאה ה-15 (או התקופה הנוכחית, לטינית: praesens tempus).",
-        clipUrl: "..."
       },
       {
         id: "enlightment",
         title: "משקולת",
         period: "עידן הנאורות",
         desc: "עידן הנאורות או עידן האורות (באנגלית: Age of Enlightenment) הוא כינוי לתנועה אינטלקטואלית באירופה, ששמה לעצמה למטרה לבסס מוסר, אסתטיקה וידע הנשענים על רציונליות והנחת יסוד לוגוצנטרית. מנהיגי התנועה ראו בעצמם אליטה אמיצה של אינטלקטואלים המובילים את העולם לעבר קידמה מתוך תקופה ארוכה של חוסר רציונליות, חוסר בגרות ועריצות, שהחלה בתקופת ימי הביניים, אותה כינו העת החשוכה. התנועה סיפקה את הבסיס הפילוסופי למהפכה האמריקאית ולמהפכה הצרפתית, כמו גם לעליית הקפיטליזם והבורגנות.",
-        clipUrl: "..."
       },
       {
         id: "victorian",
         title: "מגיפה",
         period: "התקופה הוויקטוריאנית",
         desc: "התקופה הוויקטוריאנית (באנגלית: Victorian era) בבריטניה הייתה תקופת השיא במהפכה התעשייתית הבריטית ואף שיאה של האימפריה הבריטית. אף על פי שבדרך כלל המושג מתייחס לתקופת מלכותה של המלכה ויקטוריה, בין השנים 1837 ועד 1901, היסטוריונים אחדים סוברים כי התקופה הוויקטוריאנית – על פי מאפייניה הייחודיים מבחינה חברתית – התחילה עם קבלת חוק הרפורמה משנת 1832. לתקופה הוויקטוריאנית קדמה התקופה הג'ורג'יאנית ולאחריה באה התקופה האדוארדית.",
-        clipUrl: "..."
       },
       {
         id: "modern-times",
         title: "זיכרון",
         period: "העידן המודרני",
         desc: "העת החדשה (או העידן המודרני), היא התקופה השלישית והנוכחית בתיקוף ההיסטוריה, על פי המקובל בהיסטוריוגרפיה המערבית. ראשיתה של העת החדשה נקבעה בחלק ניכר מההיסטוריוגרפיה המערבית בשנת 1492, השנה בה גילה קולומבוס את יבשת אמריקה.",
-        clipUrl: "..."
       }
     ]
   };
+  
+  var chapterList = content.chapters;
 
   /*********************
         HANDLEBARS
@@ -71,15 +68,19 @@ $(document).ready(function() {
     rtl: true,
     controls: false,
     touch: false,
-    keyboard: true,
+    keyboard: false,
     transition: 'slide',
-    center: true,
-    overview: false
+    center: false,
+    overview: false,
+    width: '100%',
+    height: '100%',
+    margin: 0
+    
   });
   
-  /**************
-        MENU
-  **************/
+  /*************
+       MENU
+  *************/
   
   function menuHighlight() {
     // Remove existing highlight
@@ -97,48 +98,49 @@ $(document).ready(function() {
   Reveal.addEventListener( 'slidechanged', function(event) {
     menuHighlight();
   });
+
   
-  /*
-  $('.owl-carousel').owlCarousel({
-    rtl: true,
-    items: 1,
-    nav: true,
-    URLhashListener: true,
-    startPosition: 'URLHash',
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    onInitialize: menuHighlight,
-    onChanged: menuHighlight,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn'
+  /************
+      VIDEO
+  ************/
+  
+  videojs('chapter-video', {
+      width: '100%',
+      height: '100%'
+    }, function(){
+    // Player (this) is initialized and ready.
   });
-    
-  function menuHighlight(event) {
-    $('.menu-item.active').removeClass('active');
-    var activeSlideId = $('.owl-item.active section').attr('id');
-    var respectiveMenuItem = '.menu-item a[href=#' + activeSlideId + ']';
-    $('.menu-item a[href=#' + activeSlideId + ']').parent().addClass('active');
-  }
-  */
   
-  /*****************************
-      HACKY VIDEO INTERACTION
-  *****************************/
+  var videosPath = 'public/videos/';
   
-  var playButton = '<button class="action play"><i class="fa fa-play fa-flip-horizontal"></i> נגן סרטון</button>'
-  var videoStub = '<i class="action fa fa-circle-o-notch fa-spin"></i>';
-  var nextButton = '<button class="action next">לסרטון הבא <i class="fa fa-arrow-right fa-flip-horizontal"></i></button>'
+  var openVideoBtn = '<button type="button" class="open-video-btn btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#video-player">נגן סרטון</button>'
+  var reopenVideoBtn ='<button type="button" class="reopen-video-btn btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#video-player">חזור לסרטון</button>'
+  var replayVideoBtn ='<button type="button" class="replay-video-btn btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#video-player">נגן שוב</button>'
+  var nextChapterBtn ='<button type="button" class="next-chapter-btn btn btn-primary btn-lg center-block">לפרק הבא</button>'
   
-  $('.video')
-    .on('click', '.action.play', function() {
-      $(this).replaceWith(videoStub);
-      $('i.fa-spin').wait(2500).replaceWith(nextButton);
-    });
-  $('.video')
-    .on('click', '.action.next', function() {
-      Reveal.next();
-      $(this).replaceWith(playButton);
-    });
+  $('.slide').on('slidechanged', function() {
+    var currentChapterId = $('.chapter.present').attr('id');
+    var videoUrl = videosPath + currentChapterId + '.mp4';
+    videojs('chapter-video').src(videoUrl);
+  });
+  
+  $('#video-player').on('shown.bs.modal', function (e) {
+    $('.chapter.present .actions').empty().append(reopenVideoBtn, nextChapterBtn);
+    $('video').get(0).play();
+  });
+  
+  $('#video-player').on('hide.bs.modal', function (e) {
+    $('video').get(0).pause();
+  });
+  
+  $('video').on('ended', function (e) {
+    $('.chapter.present .actions').empty().append(replayVideoBtn, nextChapterBtn);
+    $('#video-player').modal('hide');
+  });
+  
+  $('.chapter').on('click', ' .next-chapter-btn', function (e) {
+    console.log('YAY!!!!');
+    Reveal.next();
+  });
+  
 });
