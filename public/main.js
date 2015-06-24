@@ -75,7 +75,10 @@ $(document).ready(function() {
     width: '100%',
     height: '100%',
     margin: 0
-    
+  });
+  
+  $('.chapter').on('click', ' .next-chapter-btn', function (e) {
+    Reveal.next();
   });
   
   /*************
@@ -111,21 +114,31 @@ $(document).ready(function() {
     // Player (this) is initialized and ready.
   });
   
+  // Auxilury vars and functions
+  
   var videosPath = 'public/videos/';
   
-  var openVideoBtn = '<button type="button" class="open-video-btn btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#video-player">נגן סרטון</button>'
-  var reopenVideoBtn ='<button type="button" class="reopen-video-btn btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#video-player">חזור לסרטון</button>'
-  var replayVideoBtn ='<button type="button" class="replay-video-btn btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#video-player">נגן שוב</button>'
-  var nextChapterBtn ='<button type="button" class="next-chapter-btn btn btn-primary btn-lg center-block">לפרק הבא</button>'
+  function replaceVideoFile(videoUrl) {
+    videojs('chapter-video').src(videoUrl);
+  }
+  
+  function resetActions() {
+    $('.next-chapter-btn').addClass('hidden').removeClass('main-action sec-action');
+    $('.open-video-btn').add('main-action').removeClass('sec-action');
+  }
+  
+  // Handling slide changes
   
   $('.slide').on('slidechanged', function() {
+    resetActions();
     var currentChapterId = $('.chapter.present').attr('id');
     var videoUrl = videosPath + currentChapterId + '.mp4';
-    videojs('chapter-video').src(videoUrl);
+    replaceVideoFile(videoUrl);
   });
   
+  // Modal events trigger video behavior
+  
   $('#video-player').on('shown.bs.modal', function (e) {
-    $('.chapter.present .actions').empty().append(reopenVideoBtn, nextChapterBtn);
     $('video').get(0).play();
   });
   
@@ -133,14 +146,16 @@ $(document).ready(function() {
     $('video').get(0).pause();
   });
   
-  $('video').on('ended', function (e) {
-    $('.chapter.present .actions').empty().append(replayVideoBtn, nextChapterBtn);
-    $('#video-player').modal('hide');
-  });
+  // Video events re-order action buttons
   
-  $('.chapter').on('click', ' .next-chapter-btn', function (e) {
-    console.log('YAY!!!!');
-    Reveal.next();
+  $('video').on('play', function (e) {
+    $('.chapter.present .next-chapter-btn').removeClass('hidden').addClass('sec-action');
+  })
+  
+  $('video').on('ended', function (e) {
+    $('.chapter.present .open-video-btn').addClass('sec-action');
+    $('.chapter.present .next-chapter-btn').removeClass('sec-action').addClass('main-action');
+    $('#video-player').modal('hide');
   });
   
 });

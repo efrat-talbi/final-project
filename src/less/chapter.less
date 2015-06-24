@@ -6,12 +6,40 @@
   padding: 0 !important;
   
   .actions {
-    height: 75vh;
-    background-color: @gray;
+    height: 66.66666666vh;
+    background-color: @gray-darker;
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
+    
+    button {
+      .center-block;
+      padding: 1em;
+      border: none;
+      background-color: transparent;
+      color: white;
+
+      span.btn-label {
+        .sr-only;
+      }
+    }
+  }
+  
+  .main-action {
+    font-size: 6em;
+  }
+  
+  .sec-action {
+    font-size: 3em;
+  }
+  
+  .open-video-btn:before {
+    .icn("f01d");
+  }
+  
+  .next-chapter-btn:before {
+    .icn("f190");
   }
   
   .chapter-title,
