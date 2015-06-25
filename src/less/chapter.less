@@ -1,63 +1,66 @@
-.chapter {
-  
-  .actions {
-    height: 66.66666666vh;
-    background-color: @gray-darker;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    
-    button {
-      .center-block;
-      padding: 1em;
-      border: none;
-      background-color: transparent;
-      color: white;
+.actions {
+  height: 66.66666666vh;
+  background-color: @gray-darker;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 
-      span.btn-label {
-        .sr-only;
-      }
+  button {
+    .center-block;
+    padding: 1em;
+    border: none;
+    background-color: transparent;
+    color: white;
+
+    span.btn-label {
+      .sr-only;
     }
-  }
-  
-  .main-action {
-    font-size: 6em;
-  }
-  
-  .sec-action {
-    font-size: 3em;
-  }
-  
-  .open-video-btn:before {
-    .icn("f01d");
-  }
-  
-  .next-chapter-btn:before {
-    .icn("f190");
-  }
-  
-  .chapter-title,
-  .chapter-desc {
-    float: right;
-    display: inline-block;
-  }
-
-  .chapter-title {
-    font-size: 3em;
-    
-    .chapter-number {
-      font-size: 0.25em;
-      color: #999;
-      display: block;
-    }
-
-    .chapter-period {
-      font-size: 0.5em;
-      display: block;
-    }
-  }
-
-  .chapter-desc {
   }
 }
+
+.main-action {
+  font-size: 6em;
+}
+
+.sec-action {
+  font-size: 3em;
+}
+
+.open-video-btn:before {
+  .icn("f01d");
+}
+
+.next-chapter-btn:before {
+  .icn("f190");
+}
+
+.chapter-header {
+  .panel;
+  .panel-default;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.chapter-number,
+.chapter-title,
+.chapter-period {
+  width: auto;
+  display: inline;
+}
+
+.chapter-number {
+  color: #999;
+}
+
+.chapter-period {
+  font-size: 1.5em;
+}
+
+.chapter-desc {
+  column-count: 2;
+  column-gap: @grid-gutter-width;
+}
+
