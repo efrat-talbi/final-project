@@ -2,8 +2,14 @@
 
 @font-path: "/public/fonts";
 
-@font-family-base:        "almoni-dl", Arial, sans-serif !important;
-@headings-font-family:    "noyland", Arial, sans-serif !important;
+@font-family-base:        "almoni-dl", Arial, sans-serif;
+@headings-font-family:    "noyland", Arial, sans-serif;
+
+@font-size-base:          14px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            3em;
 
 
 
@@ -32,6 +38,8 @@
 
 //-- Z-index master list
 
+@zindex-bg:                -100;
+@zindex-content:              0;
 @zindex-navbar:            1000;
 @zindex-dropdown:          1000;
 @zindex-popover:           1060;
