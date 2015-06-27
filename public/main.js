@@ -77,7 +77,7 @@ $(document).ready(function() {
     margin: 0
   });
   
-  $('.chapter').on('click', ' .next-chapter-btn', function (e) {
+  $('.slides').on('click', ' .next-chapter-btn', function (e) {
     Reveal.next();
   });
   
@@ -139,20 +139,20 @@ $(document).ready(function() {
   // Modal events trigger video behavior
   
   $('#video-player').on('shown.bs.modal', function (e) {
-    $('video').get(0).play();
+    $('#video-player video').get(0).play();
   });
   
   $('#video-player').on('hide.bs.modal', function (e) {
-    $('video').get(0).pause();
+    $('#video-player video').get(0).pause();
   });
   
   // Video events re-order action buttons
   
-  $('video').on('play', function (e) {
+  $('#video-player video').on('play', function (e) {
     $('.chapter.present .next-chapter-btn').removeClass('hidden').addClass('sec-action');
   })
   
-  $('video').on('ended', function (e) {
+  $('#video-player video').on('ended', function (e) {
     $('.chapter.present .open-video-btn').addClass('sec-action');
     $('.chapter.present .next-chapter-btn').removeClass('sec-action').addClass('main-action');
     $('#video-player').modal('hide');
