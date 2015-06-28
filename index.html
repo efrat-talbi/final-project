@@ -19,6 +19,33 @@
     <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img src="/public/img/logo.svg" alt="היסטוריה של היסטריה">
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="#" data-toggle="modal" data-target="#about"><span class="sr-only">אודות</span></a></li>
+            <li><a href="#" data-toggle="modal" data-target="#sharing-options"><span class="sr-only">שיתוף</span></a></li>
+            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
     <div class="reveal">
       <div class="slides">
@@ -31,14 +58,55 @@
     </ol>
     
     <div class="modal fade" id="video-player" tabindex="-1" role="dialog" aria-labelledby="video player">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <video class="video-js vjs-default-skin" id="chapter-video" controls muted preload="none" src="/public/videos/ancient-greece.mp4">
-            </video>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-          </div>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <video class="video-js vjs-default-skin" id="chapter-video" controls muted preload="none" src="/public/videos/ancient-greece.mp4">
+          </video>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
         </div>
       </div>
+    </div>
+
+    <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="about the project">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">מה פשר?!</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              פולאאוט מתרחש בהיסטוריה אלטרנטיבית בה ארצות הברית לאחר מלחמת העולם השנייה המשיכה להסתגר בתוך עצמה, "חבר העמים" האירופי (המקביל לאיחוד האירופי במציאות) נהיה למעצמה, ברית המועצות לא התפרקה, פצצות האטום נשארו אך ורק פצצות ביקוע ופצצות המימן וראשי הנפץ הגרעיניים המודרניים לא הומצאו, המלחמה הקרה המשיכה לתוך שנות ה-2000, שבב הסיליקון אינו קיים, והתפתחות התרבות נעצרה בערך היכן שהייתה באמצע שנות ה-50.
+            </p>
+            <p>
+בעקבות משבר אנרגיה חריף הנגרם עקב דלדול מקורות הנפט והאורניום שוררת מתיחות רבה בין המעצמות, מאבקי הכוחות ביניהן על המשאבים הללו נקראו "מלחמת המשאבים". ב-2066, סין הקומוניסטית, בעקבות סירובה של ארצות הברית למכור נפט מאלסקה, פולשת לאלסקה וכובשת אותה. ארצות הברית מכריזה בתורה מלחמה על סין ויוצאת במאבק לכבוש את אלסקה מחדש ומשתמשת במשאבים קנדיים לצורך המלחמה שלהם, למרות תלונות קנדיות. בסופו של דבר מספחת ארצות הברית את קנדה בכוח בפברואר 2076 בשל התנגדות קנדית לנוכחות הצבא האמריקאי על שטחה.
+            </p>
+            <p>
+בזכות המצאה גאונית בשם "שריון ממונע"‏[4]‏[5] צבא ארצות הברית הודף בהצלחה את הפולש הסיני ומשיב את הריבונות על אלסקה. ולאחר השבת הריבונות על אלסקה, פותחת ארצות הברית במתקפת נגד על אדמת סין. שנה לאחר גירוש הסינים מאלסקה ב-23 באוקטובר 2077 פורצת מלחמה אטומית בשם "המלחמה הגדולה". איש לא יודע מי שיגר ראשון ומדוע, אבל בפחות מכמה שעות בלבד מרבית הערים המרכזיות נמחקות מעל פני האדמה, מותירות אחריהן רק תלי בניינים הרוסים. החורבן רב והחברה, הכלכלה והתרבות האנושיים נמחקים כלא היו. רק מאות אלפים בני מזל שנבחרו לפרויקט "בית מסתור" של הממשלה האמריקנית היו מוגנים מפני ההרס הרב של הפצצות ולאחר מכן הקרינה הרבה שנבעה מהנשורת הגרעינית והמוטנטים שהיא יצרה. מאה שנה מפרוץ אותה המלחמה, החברה האנושית טרם השתקמה לגמרי. הפרוטגוניסט (הדמות הראשית) של פולאאוט הוא תושב של אחד המקלטים האטומיים, המכונים כספות (Vaults). הכספות, שנבנו על ידי חברה בשם וולט טק (Vault tec), חברה ממשלתית שהופקדה על ביצוע פרויקט "בית מסתור", נועדו להגן על חלק משמעותי מאוכלוסיית ארצות הברית כדי לאכלס אותה מחדש אחרי שהדעיכה הטבעית של הקרינה מהנשורת התקדמה די הצורך, כדי להפוך את האדמה לבטוחה שוב.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">סבבה לגמרי</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    
+    <div class="modal fade" id="sharing-options" tabindex="-1" role="dialog" aria-labelledby="sharing options">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">הפיצו את הבשורה!</h4>
+          </div>
+          <div class="modal-body">
+            <a class="btn btn-default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">פייסבוק</span></a>
+            <a class="btn btn-default" target="_blank" href="https://twitter.com/home?status=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">טוויטר</span></a>
+            <a class="btn btn-default" target="_blank" href="mailto:?&subject=היסטוריה של היסטריה&body=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">מייל</span></a>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     
     <script src="public/components/jquery/dist/jquery.min.js"></script>
     <script src="public/components/plugins.js"></script>
@@ -66,15 +134,15 @@
     <script id="chapter-template" type="text/x-handlebars-template">
       <section id="start">
         Oh hi!
-        <button type="button" class="next-chapter-btn"><span class="btn-label">לפרק הבא</span></button>
+        <button type="button" class="next-chapter-btn"><span class="sr-only">לפרק הבא</span></button>
       </section>
       {{#chapters}}
       <section class="chapter" id="{{id}}">
         <div class="container-fluid">
           <div class="chapter-masthead row">
             <div class="actions col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
-              <button type="button" class="open-video-btn main-action" data-toggle="modal" data-target="#video-player"><span class="btn-label">נגן סרטון</span></button>
-              <button type="button" class="next-chapter-btn hidden"><span class="btn-label">לפרק הבא</span></button>
+              <button type="button" class="open-video-btn main-action" data-toggle="modal" data-target="#video-player"><span class="sr-only">נגן סרטון</span></button>
+              <button type="button" class="next-chapter-btn hidden"><span class="sr-only">לפרק הבא</span></button>
             </div>
             <video class="bg-video" loop autoplay preload=”auto” src="/public/backgrounds/{{id}}_bg.mp4">
             </video>
