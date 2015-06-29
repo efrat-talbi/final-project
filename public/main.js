@@ -75,6 +75,20 @@ $(document).ready(function() {
     Reveal.next();
   });
   
+  Reveal.addEventListener( 'ready', function(e) {
+    menuHighlight();
+    resetBgVideos();
+    loadCurrentVideo();
+  });
+  
+  Reveal.addEventListener( 'slidechanged', function(e) {
+    menuHighlight();
+    resetBgVideos();
+    resetActions();
+    loadCurrentVideo();
+  });
+  
+  
   /*************
        MENU
   *************/
@@ -88,18 +102,22 @@ $(document).ready(function() {
     $(respectiveMenuItem).parent().addClass('present');
   }
   
-  Reveal.addEventListener( 'ready', function(event) {
-    menuHighlight();
-  });
+  /************************
+      BACKGROUND VIDEOS
+  ************************/
   
-  Reveal.addEventListener( 'slidechanged', function(event) {
-    menuHighlight();
-  });
+  // Pause all bg-videos of out-of-view chapters and play the current chapter's one
+  function resetBgVideos() {
+    $('section:not(.present) .bg-video').each( function(index) {
+      $(this).get(0).pause();
+    });
+    $('.present .bg-video').get(0).play(); 
+  }
 
   
-  /************
-      VIDEO
-  ************/
+  /********************
+      CHAPTER VIDEOS
+  ********************/
   
   videojs('chapter-video', {
       width: '100%',
@@ -116,31 +134,30 @@ $(document).ready(function() {
     videojs('chapter-video').src(videoUrl);
   }
   
+  function loadCurrentVideo() {
+    var currentChapterId = $('.chapter.present').attr('id');
+    var videoUrl = videosPath + currentChapterId + '.mp4';
+    replaceVideoFile(videoUrl);
+  }
+  
   function resetActions() {
     $('.next-chapter-btn').addClass('hidden').removeClass('main-action sec-action');
     $('.open-video-btn').add('main-action').removeClass('sec-action');
   }
   
-  // Handling slide changes
-  
-  $('.slide').on('slidechanged', function() {
-    resetActions();
-    var currentChapterId = $('.chapter.present').attr('id');
-    var videoUrl = videosPath + currentChapterId + '.mp4';
-    replaceVideoFile(videoUrl);
-  });
-  
   // Modal events trigger video behavior
   
   $('#video-player').on('shown.bs.modal', function (e) {
+    $('.present .bg-video').get(0).pause()
     $('#video-player video').get(0).play();
   });
   
   $('#video-player').on('hide.bs.modal', function (e) {
     $('#video-player video').get(0).pause();
+    $('.present .bg-video').get(0).play();
   });
   
-  // Video events re-order action buttons
+  // Video events configure action buttons
   
   $('#video-player video').on('play', function (e) {
     $('.chapter.present .next-chapter-btn').removeClass('hidden').addClass('sec-action');
