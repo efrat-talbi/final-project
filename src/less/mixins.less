@@ -1,4 +1,56 @@
 .icn(@unicode) {
   content: "\@{unicode}";
   font-family: "FontAwesome";
+  .fa-fw;
+}
+
+.paper {
+  background-color: white;
+  background-image: url('/public/img/bg-pattern.png');
+}
+
+.bold-stroke {
+  border: 2px solid @gray-dark;
+}
+
+.img-btn(@chapter, @role, @size) {
+  height: ~"@{btn-size-@{size}}";
+  width: ~"@{btn-size-@{size}}";
+  background-image: url('/public/img/buttons/@{chapter}/@{role}_@{size}.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+  outline: none;
+  
+  &:hover {
+    background-image: url('/public/img/buttons/@{chapter}/@{role}_@{size}_hover.svg');
+  }
+}
+
+.chapter-btns(@chapter) {
+  
+  .open-video-btn {
+    
+    &.main-action {
+      .img-btn(@chapter, "play", "lg");
+    }
+    
+    &.sec-action {
+      .img-btn(@chapter, "repeat", "sm");
+    }
+    
+  }
+  
+  .next-chapter-btn {
+    
+    &.main-action {
+      .img-btn(@chapter, "next", "lg");
+    }
+    
+    &.sec-action {
+      .img-btn(@chapter, "next", "sm");
+    }
+  }
 }

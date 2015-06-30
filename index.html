@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
     
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 
     <link rel="stylesheet" href="public/main.css">
     <script src="public/components/modernizr-2.8.3.min.js"></script>
@@ -39,8 +39,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             
           <ul class="nav navbar-nav navbar-left">
-            <li><a href="#" data-toggle="modal" data-target="#about"><span class="sr-only">אודות</span></a></li>
-            <li><a href="#" data-toggle="modal" data-target="#sharing-options"><span class="sr-only">שיתוף</span></a></li>
+            <li><a class="" href="#" data-toggle="modal" data-target="#about"><span class="sr-only">אודות</span></a></li>
+            <li><a class="" href="#" data-toggle="modal" data-target="#sharing-options"><span class="sr-only">שיתוף</span></a></li>
             
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -60,7 +60,7 @@
     <div class="modal fade" id="video-player" tabindex="-1" role="dialog" aria-labelledby="video player">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <video class="video-js vjs-default-skin" id="chapter-video" controls muted preload="none" src="/public/videos/ancient-greece.mp4">
+          <video class="video-js vjs-default-skin" id="chapter-video" controls preload="auto" src="/public/videos/ancient-greece.mp4">
           </video>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -71,7 +71,8 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i>
+</button>
             <h4 class="modal-title">מה פשר?!</h4>
           </div>
           <div class="modal-body">
@@ -85,9 +86,6 @@
 בזכות המצאה גאונית בשם "שריון ממונע"‏[4]‏[5] צבא ארצות הברית הודף בהצלחה את הפולש הסיני ומשיב את הריבונות על אלסקה. ולאחר השבת הריבונות על אלסקה, פותחת ארצות הברית במתקפת נגד על אדמת סין. שנה לאחר גירוש הסינים מאלסקה ב-23 באוקטובר 2077 פורצת מלחמה אטומית בשם "המלחמה הגדולה". איש לא יודע מי שיגר ראשון ומדוע, אבל בפחות מכמה שעות בלבד מרבית הערים המרכזיות נמחקות מעל פני האדמה, מותירות אחריהן רק תלי בניינים הרוסים. החורבן רב והחברה, הכלכלה והתרבות האנושיים נמחקים כלא היו. רק מאות אלפים בני מזל שנבחרו לפרויקט "בית מסתור" של הממשלה האמריקנית היו מוגנים מפני ההרס הרב של הפצצות ולאחר מכן הקרינה הרבה שנבעה מהנשורת הגרעינית והמוטנטים שהיא יצרה. מאה שנה מפרוץ אותה המלחמה, החברה האנושית טרם השתקמה לגמרי. הפרוטגוניסט (הדמות הראשית) של פולאאוט הוא תושב של אחד המקלטים האטומיים, המכונים כספות (Vaults). הכספות, שנבנו על ידי חברה בשם וולט טק (Vault tec), חברה ממשלתית שהופקדה על ביצוע פרויקט "בית מסתור", נועדו להגן על חלק משמעותי מאוכלוסיית ארצות הברית כדי לאכלס אותה מחדש אחרי שהדעיכה הטבעית של הקרינה מהנשורת התקדמה די הצורך, כדי להפוך את האדמה לבטוחה שוב.
             </p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">סבבה לגמרי</button>
-          </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
@@ -95,14 +93,10 @@
     <div class="modal fade" id="sharing-options" tabindex="-1" role="dialog" aria-labelledby="sharing options">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">הפיצו את הבשורה!</h4>
-          </div>
           <div class="modal-body">
-            <a class="btn btn-default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">פייסבוק</span></a>
-            <a class="btn btn-default" target="_blank" href="https://twitter.com/home?status=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">טוויטר</span></a>
-            <a class="btn btn-default" target="_blank" href="mailto:?&subject=היסטוריה של היסטריה&body=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">מייל</span></a>
+            <a class="" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">פייסבוק</span></a>
+            <a class="" target="_blank" href="https://twitter.com/home?status=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">טוויטר</span></a>
+            <a class="" target="_blank" href="mailto:?&subject=היסטוריה של היסטריה&body=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">מייל</span></a>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -133,9 +127,24 @@
     
     <script id="chapter-template" type="text/x-handlebars-template">
       <section id="start">
-        Oh hi!
-        <button type="button" class="next-chapter-btn"><span class="sr-only">לפרק הבא</span></button>
+        <div class="container-fluid">
+          <div class="hero panel panel-default">
+            <h1>
+              <span class="sr-only">היסטוריה של היסטריה</span>
+              <img src="public/img/logo.svg" alt="היסטוריה של היסטריה">
+            </h1>
+            <p class="help-block">
+              ארבעה סרטונים באורך דקה וחצי
+              <br>
+              אפשר להפסיק ולהמשיך מתי שמתחשק
+            </p>
+            <button type="button" class="next-chapter-btn"><span class="sr-only">התחלה</span></button>
+          </div>
+        </div>
+        <video class="bg-video" loop preload=”auto” src="/public/backgrounds/start_bg.mp4">
+        </video>
       </section>
+      
       {{#chapters}}
       <section class="chapter" id="{{id}}">
         <div class="container-fluid">
@@ -144,14 +153,16 @@
               <button type="button" class="open-video-btn main-action" data-toggle="modal" data-target="#video-player"><span class="sr-only">נגן סרטון</span></button>
               <button type="button" class="next-chapter-btn hidden"><span class="sr-only">לפרק הבא</span></button>
             </div>
-            <video class="bg-video" loop autoplay preload=”auto” src="/public/backgrounds/{{id}}_bg.mp4">
+            <video class="bg-video" loop preload=”auto” src="/public/backgrounds/{{id}}_bg.mp4">
             </video>
           </div> <!-- .actions -->
           <div class="chapter-header row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-xs-12 col-md-offset-3 col-md-6">
               <div class="panel panel-default">
                 <span class="chapter-number">פרק {{chapterNumber @index}}</span>
+                <span class="chapter-emblem"></span>
                 <h1 class="chapter-title">{{title}}</h1>
+                <hr/>
                 <span class="chapter-period">{{period}}</span>
               </div>
             </div>
@@ -164,12 +175,39 @@
         </div> <!-- .container-fluid -->
       </section>
       {{/chapters}}
-      <section id="fin">Goodbye now</section>
+      
+      <section id="fin">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="hero-container col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+              <div class="hero">
+                <h1>
+                  זהו! סיימנו! לתת לי 100 עכשיו
+                </h1>
+                <h2>זכרו - אין שאלות טפשיות, רק אנשים טפשים.</h2>
+                <p class="lead">שתפו עם האנשים שאתם אוהבים</p>
+                <div class="sharing-options">
+                  <a class="" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">פייסבוק</span></a>
+                  <a class="" target="_blank" href="https://twitter.com/home?status=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">טוויטר</span></a>
+                  <a class="" target="_blank" href="mailto:?&subject=היסטוריה של היסטריה&body=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">מייל</span></a>
+                </div>
+                <p class="help-block">
+                  אפשר גם פנים אל פנים
+                </p>
+                <button type="button" class="back-to-start btn-block">חזרה להתחלה</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </script>
     
     <script id="menu-template" type="text/x-handlebars-template">
       <li class="menu-item" id="start">
         <a href="/">
+          <span class="chapter-title">
+            התחלה
+          </span>
         </a>
       </li>
       {{#chapters}}
@@ -183,7 +221,9 @@
       {{/chapters}}
       <li class="menu-item" id="fin">
         <a href="#fin">
-          <span class="chapter-title">סוף</span>
+          <span class="chapter-title">
+            סוף
+          </span>
         </a>
       </li>
     </script>

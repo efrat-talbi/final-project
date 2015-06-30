@@ -14,19 +14,19 @@ $(document).ready(function() {
       },
       {
         id: "dark-ages",
-        title: "דיבוק",
+        title: "כלי של השטן",
         period: "ימי הביניים",
         desc: "יְמֵי הַבֵּינַיִם (בלטינית: Medium Aevum) הם תקופה במהלך ההיסטוריה האירופית שתחילתה עם סיום העת העתיקה וסופה עם הופעת הרנסאנס ותחילתה של העת החדשה. המונח הופיע לראשונה באיטליה במהלך המאה ה-15, לציון העידן שבין נפילתה של הקיסרות הרומית בשנת 476 במאה החמישית, עד 1492 שנת גילוי יבשת אמריקה במאה ה-15 (או התקופה הנוכחית, לטינית: praesens tempus).",
       },
       {
         id: "enlightment",
-        title: "משקולת",
+        title: "מחלה של השכל",
         period: "עידן הנאורות",
         desc: "עידן הנאורות או עידן האורות (באנגלית: Age of Enlightenment) הוא כינוי לתנועה אינטלקטואלית באירופה, ששמה לעצמה למטרה לבסס מוסר, אסתטיקה וידע הנשענים על רציונליות והנחת יסוד לוגוצנטרית. מנהיגי התנועה ראו בעצמם אליטה אמיצה של אינטלקטואלים המובילים את העולם לעבר קידמה מתוך תקופה ארוכה של חוסר רציונליות, חוסר בגרות ועריצות, שהחלה בתקופת ימי הביניים, אותה כינו העת החשוכה. התנועה סיפקה את הבסיס הפילוסופי למהפכה האמריקאית ולמהפכה הצרפתית, כמו גם לעליית הקפיטליזם והבורגנות.",
       },
       {
         id: "modern-times",
-        title: "זיכרון",
+        title: "נשים הן משוגעות",
         period: "העידן המודרני",
         desc: "העת החדשה (או העידן המודרני), היא התקופה השלישית והנוכחית בתיקוף ההיסטוריה, על פי המקובל בהיסטוריוגרפיה המערבית. ראשיתה של העת החדשה נקבעה בחלק ניכר מההיסטוריוגרפיה המערבית בשנת 1492, השנה בה גילה קולומבוס את יבשת אמריקה.",
       }
@@ -63,6 +63,7 @@ $(document).ready(function() {
     controls: false,
     touch: false,
     keyboard: false,
+    progress: false,
     transition: 'slide',
     center: false,
     overview: false,
@@ -76,17 +77,33 @@ $(document).ready(function() {
   });
   
   Reveal.addEventListener( 'ready', function(e) {
+    toggleNavbar();
     menuHighlight();
     resetBgVideos();
     loadCurrentVideo();
   });
   
   Reveal.addEventListener( 'slidechanged', function(e) {
+    toggleNavbar();
     menuHighlight();
     resetBgVideos();
     resetActions();
     loadCurrentVideo();
   });
+  
+  /***************
+       NAVBAR
+  ***************/
+  
+  function toggleNavbar() {
+    var isChapter = $('section.present').hasClass('chapter');
+    if (isChapter) {
+      $('.navbar').removeClass('hidden');
+    }
+    else {
+      $('.navbar').addClass('hidden');
+    }
+  }
   
   
   /*************
