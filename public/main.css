@@ -13660,6 +13660,7 @@ a[href*="mailto"]:before {
   margin-bottom: 0;
 }
 .panel hr {
+  width: 100%;
   margin-top: 5.5px;
   margin-bottom: 16.5px;
 }
