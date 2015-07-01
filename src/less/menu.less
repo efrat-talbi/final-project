@@ -1,23 +1,36 @@
 #menu {
-  width: 100%;
   position: fixed;
-  bottom: -70px;
+  bottom: 0;
   right: 0;
   z-index: @zindex-navbar-fixed;
-  padding: 0;
+  width: 100%;
+  max-height: (0.5 * @line-height-computed + 40px);
+  padding: 40px 0 0;
   margin: 0;
   display: flex;
   list-style: none;
-
+  transition: max-height 0.15s ease-out;
+  
   &:hover {
-    bottom: 0;
+    padding: 0;
+    max-height: (8 * @line-height-computed + 40px);
+    transition: max-height 0.25s ease-in;
   }
 }
 
 .menu-item {
-  // display: flex;
-  width: 18%;
-  padding-top: 40px;
+  width: 20%;
+  height: (8 * @line-height-computed);
+  background-color: @gray-darker;
+  
+  &:hover {
+    background-color: @gray-light;
+  }
+  
+  &:first-of-type,
+  &:last-of-type {
+    width: 10%;
+  }
   
   /*
   
@@ -39,42 +52,41 @@
   &.present {
     
     a {
-      background-color: #999;
+      background-color: @gray;
     }
   }
   
   a {
-    display: block;
-    height: 80px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #555;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
     text-align: center;
     text-decoration: none;
+    
+    > * {
+      display: block;
+    }
   }
-  
-  .thumbnail {
-    width: 100%;
-    height: 20%;
-    margin: 10px;
-    background-color: #222;
-  }
-  
+
   .chapter-title {
-    margin: 0 auto;
-    font-size: 2em;
+    padding-top: (0.5 * @line-height-computed);
+    padding-bottom: (0.5 * @line-height-computed);
+    margin: (0.5 * @line-height-computed) auto;
+    font-size: 1.5em;
     color: white;
-
-    .chapter-number {
-      font-size: 0.5em;
-      color: #bbb;
-      display: block;
-    }
-
-    .chapter-period {
-      display: block;
-      font-size: 0.5em;
-      font-weight: 400;
-    }
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+  
+  .chapter-number,
+  .chapter-period {
+    font-size: 0.85em;
+    letter-spacing: 2px;
+    color: @gray-lighter;
+    display: block;
   }
 }
