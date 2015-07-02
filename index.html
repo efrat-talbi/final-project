@@ -91,10 +91,15 @@
     <div class="modal fade" id="sharing-options" tabindex="-1" role="dialog" aria-labelledby="sharing options">
       <div class="modal-dialog">
         <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i>
+</button>
+            <h4 class="modal-title">אפשר לשתף</h4>
+          </div>
           <div class="modal-body">
-            <a class="" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">פייסבוק</span></a>
-            <a class="" target="_blank" href="https://twitter.com/home?status=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">טוויטר</span></a>
             <a class="" target="_blank" href="mailto:?&subject=היסטוריה של היסטריה&body=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">מייל</span></a>
+            <a class="" target="_blank" href="https://twitter.com/home?status=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">טוויטר</span></a>
+            <a class="" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">פייסבוק</span></a>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -124,7 +129,7 @@
     <!-- Handlebars templates -->
     
     <script id="chapter-template" type="text/x-handlebars-template">
-      <section id="start">
+      <section id="start" data-background-video="public/backgrounds/start_bg.mp4" data-background-video-loop>
         <div class="container-fluid">
           <div class="hero panel panel-default">
             <h1>
@@ -136,23 +141,19 @@
               <br>
               אפשר להפסיק ולהמשיך מתי שמתחשק
             </p>
-            <button type="button" class="next-chapter-btn"><span class="sr-only">התחלה</span></button>
+            <button type="button" class="start-btn"><span class="sr-only">התחלה</span></button>
           </div>
         </div>
-        <video class="bg-video" loop preload=”auto” src="public/backgrounds/start_bg.mp4">
-        </video>
       </section>
       
       {{#chapters}}
-      <section class="chapter" id="{{id}}">
+      <section class="chapter" id="{{id}}" data-background-video="public/backgrounds/{{id}}_bg.mp4" data-background-video-loop>
         <div class="container-fluid">
           <div class="chapter-masthead row">
             <div class="actions col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
               <button type="button" class="open-video-btn main-action" data-toggle="modal" data-target="#video-player"><span class="sr-only">נגן סרטון</span></button>
               <button type="button" class="next-chapter-btn hidden"><span class="sr-only">לפרק הבא</span></button>
             </div>
-            <video class="bg-video" loop preload=”auto” src="public/backgrounds/{{id}}_bg.mp4">
-            </video>
           </div> <!-- .actions -->
           <div class="chapter-header row">
             <div class="col-xs-12 col-md-offset-3 col-md-6">
@@ -166,7 +167,7 @@
             </div>
           </div> <!-- .chapter-header -->
           <div class="chapter-desc row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
               <p class="">{{desc}}</p>
             </div>
           </div> <!-- .chapter-desc -->
@@ -174,32 +175,26 @@
       </section>
       {{/chapters}}
       
-      <section id="fin">
+      <section id="fin" data-background-video="public/backgrounds/fin_bg.mp4" data-background-video-loop>
         <div class="container-fluid">
           <div class="hero panel panel-default">
-            <h1>
-              זהו! סיימנו! לתת לי 100 עכשיו
-            </h1>
-            <h2>זכרו - אין שאלות טפשיות, רק אנשים טפשים.</h2>
             <p class="lead">שתפו עם האנשים שאתם אוהבים</p>
             <div class="sharing-options">
-              <a class="" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">פייסבוק</span></a>
-              <a class="" target="_blank" href="https://twitter.com/home?status=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">טוויטר</span></a>
               <a class="" target="_blank" href="mailto:?&subject=היסטוריה של היסטריה&body=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">מייל</span></a>
+              <a class="" target="_blank" href="https://twitter.com/home?status=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">טוויטר</span></a>
+              <a class="" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://efrat-talbi.github.io/final-project/" role="button"><span class="sr-only">פייסבוק</span></a>
             </div>
             <p class="help-block">
               אפשר גם פנים אל פנים
             </p>
-            <button type="button" class="back-to-start btn-block">חזרה להתחלה</button>
+            <button type="button" class="back-to-start-btn"><span class="sr-only">חזרה להתחלה</span></button>
           </div>
         </div>
-        <video class="bg-video" loop preload=”auto” src="public/backgrounds/start_bg.mp4">
-        </video>
       </section>
     </script>
     
     <script id="menu-template" type="text/x-handlebars-template">
-      <li class="menu-item" id="start">
+      <li class="menu-item">
         <a href="#/start">
           <span class="chapter-title">
             התחלה
@@ -215,7 +210,7 @@
         </a>
       </li>
       {{/chapters}}
-      <li class="menu-item" id="fin">
+      <li class="menu-item">
         <a href="#/fin">
           <span class="chapter-title">
             סוף

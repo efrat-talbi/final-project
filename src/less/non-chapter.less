@@ -1,0 +1,52 @@
+.hero {
+  text-align: center;
+}
+  
+.help-block {
+  margin-top: (1 * @line-height-computed);
+  margin-bottom: (1 * @line-height-computed);
+  line-height: @line-height-base;
+  letter-spacing: 1px;
+  color: inherit;
+}
+
+#start {
+  
+  .hero {
+    margin-top: 33.3333333333vh;
+  }
+}
+
+.start-btn {
+  margin-bottom: (-6 * @line-height-computed);
+  .img-btn('start', 'start', 'lg')
+}
+  
+
+#fin {
+  
+  .hero {
+    margin-top: 16.666666667vh;
+    padding-bottom: (6 * @line-height-computed);
+  }
+  
+  a {
+      
+    &[href*="facebook"] {
+      .img-btn('fin', 'facebook', 'sm');
+    }
+
+    &[href*="twitter"] {
+      .img-btn('fin', 'twitter', 'sm');
+    }
+
+    &[href*="mailto"] {
+      .img-btn('fin', 'mail', 'sm');
+    }
+  }
+}
+
+.back-to-start-btn {
+  margin-bottom: (-8 * @line-height-computed);
+  .img-btn('fin', 'back-to-start', 'sm')
+}

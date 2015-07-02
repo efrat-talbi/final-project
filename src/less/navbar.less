@@ -40,16 +40,23 @@
 
 #sharing-options {
   
+  .modal-dialog {
+    width: max-content;
+  }
+  
+  .modal-body {
+    text-align: center;
+  }
 }
 
-a[href*="facebook"]:before {
-  .icn('f09a');
+a[href*="facebook"] {
+  .img-btn('navbar', 'facebook', 'sm');
 }
 
-a[href*="twitter"]:before {
-  .icn('f099');
+a[href*="twitter"] {
+  .img-btn('navbar', 'twitter', 'sm');
 }
 
-a[href*="mailto"]:before {
-  .icn('f003');
+a[href*="mailto"] {
+  .img-btn('navbar', 'mail', 'sm');
 }

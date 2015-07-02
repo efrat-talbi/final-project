@@ -1,22 +1,9 @@
 .chapter-masthead {
   position: relative;
   width: 100vw;
-  height: 66.66666666vh;
+  height: 66.666666667vh;
   overflow: hidden;
   white-space: nowrap;
-}
-
-.bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  background-size: cover;
-  z-index: @zindex-bg;
 }
 
 .actions {
@@ -51,6 +38,7 @@
 .chapter-header {
   z-index: @zindex-content;
   .paper;
+  border-top: 2px solid @gray-dark;
 }
 
 .panel {
@@ -88,8 +76,6 @@
   .center-block;
 }
 
-
-
 .chapter-number {
   font-size: 1em;
   letter-spacing: 0.5px;
@@ -101,13 +87,16 @@
 }
 
 .chapter-desc {
+  min-height: 33.33333333vh;
   .paper;
   
   p {
     column-count: 2;
-    column-gap: 1em;
-    line-height: 1.5;
-    letter-spacing: 0.3px;
+    column-gap: @grid-gutter-width;
   }
+}
+
+.slide-background.chapter {
+  height: 66.666666667vh;
 }
 
