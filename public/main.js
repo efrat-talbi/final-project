@@ -143,9 +143,12 @@ $(document).ready(function() {
   }
   
   function loadCurrentVideo() {
-    var currentChapterId = $('.chapter.present').attr('id');
-    var videoUrl = videosPath + currentChapterId + '.mp4';
-    replaceVideoFile(videoUrl);
+    var isChapter = $('section.present').hasClass('chapter');
+    if (isChapter) {
+      var currentChapterId = $('.chapter.present').attr('id');
+      var videoUrl = videosPath + currentChapterId + '.mp4';
+      replaceVideoFile(videoUrl);
+    }    
   }
   
   function resetActions() {
