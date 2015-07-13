@@ -13225,6 +13225,9 @@ body {
   background-color: white;
   background-image: url('img/bg-pattern.png');
 }
+.container-fluid {
+  min-height: 100%;
+}
 .btn {
   padding: 0.5em;
   border-radius: 50%;
@@ -13235,7 +13238,8 @@ body {
 .reveal .slides {
   font-family: "almoni-dl", Arial, sans-serif;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   text-align: right;
   padding: inherit;
   margin: inherit;
@@ -13251,19 +13255,17 @@ body {
   width: 100%;
   height: 100%;
   background-size: cover;
-  z-index: -100;
 }
 .reveal .backgrounds video {
-  top: 50%;
+  top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(0);
+          transform: translateX(-50%) translateY(0);
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
   background-size: cover;
-  z-index: -100;
 }
 p {
   line-height: 1.5;
@@ -13654,7 +13656,7 @@ a[href*="mailto"]:hover {
 #modern-times .next-chapter-btn.sec-action:hover {
   background-image: url('img/buttons/modern-times/next_sm_hover.svg');
 }
-.chapter-masthead {
+.chapter-hero {
   position: relative;
   width: 100vw;
   height: 66.666666667vh;
@@ -13687,18 +13689,8 @@ a[href*="mailto"]:hover {
 .sec-action.next-chapter-btn {
   left: 0;
 }
-.chapter-header {
-  z-index: 0;
-  background-color: white;
-  background-image: url('img/bg-pattern.png');
-  border-top: 2px solid #333333;
-}
-.panel {
-  margin-top: -132px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  padding: 30px;
+.chapter-info,
+.chapter-info-heading {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -13706,16 +13698,37 @@ a[href*="mailto"]:hover {
   background-image: url('img/bg-pattern.png');
   border: 2px solid #333333;
 }
-.panel h1 {
+.chapter-info {
+  height: auto;
+  margin-top: 22px;
+  padding: 30px;
+}
+.chapter-info p {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+.chapter-info-heading {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: -198px;
+  margin-bottom: 22px;
+  padding: 30px;
+}
+.chapter-info-heading h1 {
   margin-top: 0;
   margin-bottom: 0;
 }
-.panel hr {
+.chapter-info-heading hr {
   width: 100%;
   margin-top: 5.5px;
   margin-bottom: 16.5px;
 }
-.panel > * {
+.chapter-info-heading > * {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -13741,22 +13754,6 @@ a[href*="mailto"]:hover {
 .chapter-period {
   font-size: 1.25em;
   letter-spacing: 2.6px;
-}
-.chapter-desc {
-  min-height: 33.33333333vh;
-  background-color: white;
-  background-image: url('img/bg-pattern.png');
-}
-.chapter-desc p {
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
-  -webkit-column-gap: 30px;
-     -moz-column-gap: 30px;
-          column-gap: 30px;
-}
-.slide-background.chapter {
-  height: 66.666666667vh;
 }
 #video-player {
   width: 100vw;
@@ -13895,6 +13892,23 @@ a[href*="mailto"]:hover {
 }
 .hero {
   text-align: center;
+}
+.panel {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  background-image: url('img/bg-pattern.png');
+  border: 2px solid #333333;
+}
+.panel > button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .help-block {
   margin-top: 22px;

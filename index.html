@@ -149,28 +149,26 @@
       {{#chapters}}
       <section class="chapter" id="{{id}}" data-background-video="public/backgrounds/{{id}}_bg.mp4" data-background-video-loop>
         <div class="container-fluid">
-          <div class="chapter-masthead row">
+          <div class="chapter-hero row">
             <div class="actions col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
               <button type="button" class="open-video-btn main-action" data-toggle="modal" data-target="#video-player"><span class="sr-only">נגן סרטון</span></button>
               <button type="button" class="next-chapter-btn hidden"><span class="sr-only">לפרק הבא</span></button>
             </div>
           </div> <!-- .actions -->
-          <div class="chapter-header row">
-            <div class="col-xs-12 col-md-offset-3 col-md-6">
-              <div class="panel panel-default">
-                <span class="chapter-number">פרק {{chapterNumber @index}}</span>
-                <span class="chapter-emblem"></span>
-                <h1 class="chapter-title">{{title}}</h1>
-                <hr/>
-                <span class="chapter-period">{{period}}</span>
+          <div class="row">
+            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+              <div class="chapter-info">
+                <div class="chapter-info-heading">
+                  <span class="chapter-number">פרק {{chapterNumber @index}}</span>
+                  <span class="chapter-emblem"></span>
+                  <h1 class="chapter-title">{{title}}</h1>
+                  <hr/>
+                  <span class="chapter-period">{{period}}</span>
+                </div>
+                <p>{{desc}}</p>
               </div>
-            </div>
-          </div> <!-- .chapter-header -->
-          <div class="chapter-desc row">
-            <div class="col-md-10 col-md-offset-1">
-              <p class="">{{desc}}</p>
-            </div>
-          </div> <!-- .chapter-desc -->
+            </div> <!-- .col-xs-12 .col-sm-offset-2 .col-sm-8 .col-md-offset-3 .col-md-6 -->
+          </div> <!-- .chapter-info -->
         </div> <!-- .container-fluid -->
       </section>
       {{/chapters}}
