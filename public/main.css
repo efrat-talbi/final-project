@@ -13382,6 +13382,13 @@ h4 {
 .navbar-left li:last-child a:hover {
   background-image: url('img/buttons/navbar/share_xs_hover.svg');
 }
+#about ul {
+  list-style: none;
+  padding-right: 0;
+}
+#about li {
+  margin-bottom: 11px;
+}
 #sharing-options .modal-dialog {
   width: -webkit-max-content;
   width: -moz-max-content;
