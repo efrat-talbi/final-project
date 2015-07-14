@@ -178,4 +178,33 @@ $(document).ready(function() {
     $('#video-player').modal('hide');
   });
   
+  /******************
+      IDLE TIMER
+  ******************/
+  
+  $(document).idleTimer(420000);
+  
+  $(document).on('active.idleTimer', function(event, elem, obj, triggerevent){
+    // function you want to fire when the user becomes active again
+    console.log('yoink!');
+    Reveal.slide(0);
+  });
+
+    /*
+    *   Here are the arguments
+    */
+    // event
+    // will be either idle.idleTimer or active.idleTimer
+    // use event.stopPropagation(); to stop element from bubbling up to document
+
+    // elem
+    // is the element that the event was triggered on
+
+    // obj
+    // is a copy of the internal data used by idleTimer
+
+    // triggerevent
+    // is the initial event that triggered the element to become active
+    // obviously for idle state this will be undefined
+  
 });
