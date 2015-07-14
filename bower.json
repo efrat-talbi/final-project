@@ -23,6 +23,7 @@
     "video.js": "~4.12.9",
     "bootstrap": "~3.3.5",
     "fontawesome": "~4.3.0",
-    "bootstrap-rtl": "~3.3.2"
+    "bootstrap-rtl": "~3.3.2",
+    "jquery-idletimer": "~1.0.1"
   }
 }
